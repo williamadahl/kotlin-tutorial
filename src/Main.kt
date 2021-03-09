@@ -1,21 +1,18 @@
-/* Types are non-null by default*/
-/* If you want to use null initialized variables use the '?' on type ( nullable) */
-var greeting: String? = "hello"
-val name: String = "Natalie"
-
-/* Kotlin supports type inferences. Var and Val can therefore be declared as such : */
-var mail = "mail@mail"
+/* Top-level variables */
+var email: String = "mail@mail"
 
 fun main() {
-    println(greeting)
-    println(name)
 
-    greeting = null
+    /*Mutable variable*/
+    var firstName: String = "Aggatha"
 
-    println(greeting)
-    println(name)
+    /*Immutable variable*/
+    val surName: String = "Mars"
+    firstName = "Nataile"
 
-    println(mail)
+    email = "@gmail.com"
+    println(firstName)
+    println(email)
 
 
 }
