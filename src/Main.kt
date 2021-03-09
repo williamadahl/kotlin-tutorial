@@ -1,17 +1,16 @@
-/* Top-level variables */
-var email: String = "mail@mail"
+/* Kotlin variables are non-null by default
+*  If we want nullable variables add '?' after type
+*  Kotlin supports type inference on variables and properties!
+* */
+
+var email = "mail@mail"
+var name: String? = "Natalie"
 
 fun main() {
 
-    /*Mutable variable*/
-    var firstName: String = "Aggatha"
-
-    /*Immutable variable*/
-    val surName: String = "Mars"
-    firstName = "Nataile"
-
     email = "@gmail.com"
-    println(firstName)
+    name = null
+    println(name)
     println(email)
 
 
