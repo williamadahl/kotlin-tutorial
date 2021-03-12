@@ -10,4 +10,18 @@ fun main() {
     for(things in listOfThings){
         println(things)
     }
+    /* More functional :
+    *  Remember the arrow :)
+    *  This is lambda syntax in Kotlin
+    *  */
+    listOfThings.forEach {thing ->
+        println(thing)
+    }
+
+    /*
+    * Can also used an indexed function for this:
+    * */
+    listOfThings.forEachIndexed { index, thing ->
+        println("$index : $thing")
+    }
 }
