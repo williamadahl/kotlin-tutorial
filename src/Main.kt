@@ -1,32 +1,22 @@
+/* Unit = absence of any type
+*  Can be used for functions that does not return anything but calls other functions
+*  Can also omit the "Unit" type value
+*  Can also use the nullable return type with "?"
+* */
 
-var greeting: String? = null
+fun sayHello(): String{
+    return "Hello from function"
+}
+
+fun sayHelloSimple () = "Hello from simple function"
+
+fun callSayHello() {
+    println("From caller function: " + sayHello())
+}
 
 fun main() {
+    println(sayHello())
+    println(sayHelloSimple())
+    callSayHello()
 
-    /* standard if / else */
-    if(greeting != null){
-        println(greeting)
-    }else{
-        println("hi")
-    }
-    println("--------------")
-
-    /* when statement is much like switch statement */
-    when(greeting){
-        null -> println("hi")
-        else -> println(greeting)
-    }
-    println("--------------")
-    /* If greeting has some value, the val vil be set to greeting.*/
-    val greetingToPrint = if(greeting != null) greeting else "I am greetingToPrint, hi"
-    println(greetingToPrint)
-    println("--------------")
-
-    greeting = "Hello"
-
-    val secondGreeting = when(greeting){
-        null -> "hi"
-        else -> greeting
-    }
-    println(secondGreeting)
 }
