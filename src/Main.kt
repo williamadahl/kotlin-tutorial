@@ -1,22 +1,22 @@
-/* Unit = absence of any type
-*  Can be used for functions that does not return anything but calls other functions
-*  Can also omit the "Unit" type value
-*  Can also use the nullable return type with "?"
+/*
+* Kotlin supports string templates, so in stead of concatenation "+" we can use "$"
+* Here are some top-level function examples
 * */
 
-fun sayHello(): String{
-    return "Hello from function"
+fun sayHello(itemToPrint:String){
+    val msg = "Hello " + itemToPrint
+    val msgTemplate = "With string template: Hello $itemToPrint"
+    println(msg)
+    println(msgTemplate)
 }
+// Here as a single expression function:
+fun sayHelloSingleExpression (itemToPrint: String) = println("Hello Kotlin $itemToPrint")
 
-fun sayHelloSimple () = "Hello from simple function"
+fun twoParams(greetingString:String, greetingTo:String) = println("$greetingString $greetingTo")
 
-fun callSayHello() {
-    println("From caller function: " + sayHello())
-}
 
 fun main() {
-    println(sayHello())
-    println(sayHelloSimple())
-    callSayHello()
-
+    sayHello("Kotlin")
+    sayHelloSingleExpression("with single expression")
+    twoParams("Hello", "my friend")
 }
