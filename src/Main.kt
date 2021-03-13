@@ -1,5 +1,9 @@
 
-fun sayHello(greetingString: String, greetingTo:List<String>) = run {
+/*
+* Vararg means variable amount of arguments, this way we don't have to send anything into the function.
+* Kotlin treats the greetingTo as an array, so with empty, we get an empty array.
+* */
+fun sayHello(greetingString: String, vararg greetingTo:String) = run {
     greetingTo.forEach{ personToGreet ->
         println("$greetingString, $personToGreet")
     }
@@ -7,24 +11,10 @@ fun sayHello(greetingString: String, greetingTo:List<String>) = run {
 
 
 fun main() {
-    val listOfThings = listOf("Kotlin", "Java", "Python")
-    listOfThings.forEach { thing ->
-        println(thing)
-    }
-    /* Map takes in pairs
-    *  By default a collection type in kotlin is immutable
-    * */
-    val map = mapOf(1 to "Kotlin", 2 to "Java", 3 to "Python")
-    map.forEach{ (key, value) -> println("$key -> $value")}
+    val listOfThings = arrayOf("Kotlin", "Java", "Python")
 
-    /*
-    * Here is an mutable example
-    * */
+    sayHello("hello", "Kotlin", "Programming", "Toilet")
 
-    val mutableMap = mutableMapOf(1 to "Nina", 2 to "Natalie", 3 to "Lexi")
-    mutableMap.put(4, "Nadia")
-    mutableMap.forEach{ (key, value) -> println("$key -> $value")}
-
-    /* Passing a collection type as a parameter */
-    sayHello("hello", listOfThings)
+    /* In kotlin we use the '*' as a spread operand */
+    sayHello("hello", *listOfThings)
 }
