@@ -11,6 +11,12 @@ fun sayHello(greetingString: String, vararg greetingTo:String) = run {
 
 fun greetPerson(greeting: String, person: String) = println("$greeting, $person")
 
+/*
+* Example with default values in a function:
+* With this tool, we don't have to have constructors, getters, setters.
+* */
+fun greetWithDefault(greeting: String = "Good morning", person: String = "Slave") = println("$greeting, $person")
+
 fun main() {
 
     val listOfThings = arrayOf("Kotlin", "Java", "Python")
@@ -23,4 +29,13 @@ fun main() {
     * now it does not matter which order they are passed in
     * */
     greetPerson(greeting="Hello", person = "Natalie")
+
+    /* Called function with default parameters some times :
+    *  Note, if you use named parameter for one of the parameter, you have to do it for the others
+    * */
+    greetWithDefault()
+    greetWithDefault(greeting = "Obey")
+    greetWithDefault(person = "Natalie")
+    greetWithDefault(person = "Natalie", greeting = "Bow down")
+    sayHello(greetingString = "Sit back down", greetingTo = *listOfThings)
 }
