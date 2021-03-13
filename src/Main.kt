@@ -9,12 +9,18 @@ fun sayHello(greetingString: String, vararg greetingTo:String) = run {
     }
 }
 
+fun greetPerson(greeting: String, person: String) = println("$greeting, $person")
 
 fun main() {
+
     val listOfThings = arrayOf("Kotlin", "Java", "Python")
-
     sayHello("hello", "Kotlin", "Programming", "Toilet")
-
     /* In kotlin we use the '*' as a spread operand */
     sayHello("hello", *listOfThings)
+
+    /*
+    * Named arguments, this way we don't mess up the order of arguments etc
+    * now it does not matter which order they are passed in
+    * */
+    greetPerson(greeting="Hello", person = "Natalie")
 }
