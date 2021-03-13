@@ -25,5 +25,6 @@ fun main() {
     mutableMap.put(4, "Nadia")
     mutableMap.forEach{ (key, value) -> println("$key -> $value")}
 
+    /* Passing a collection type as a parameter */
     sayHello("hello", listOfThings)
 }
